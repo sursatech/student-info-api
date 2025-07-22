@@ -1,0 +1,55 @@
+{
+  "info": {
+    "name": "Student Info API",
+    "_postman_id": "b1e1e1e1-1234-5678-9101-abcdefabcdef",
+    "description": "CRUD API for Student Info (Node.js, Prisma, PostgreSQL)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Student",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"age\": 20\n}"
+        },
+        "url": { "raw": "http://localhost:3000/students", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["students"] }
+      }
+    },
+    {
+      "name": "Get All Students",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:3000/students", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["students"] }
+      }
+    },
+    {
+      "name": "Get Student By ID",
+      "request": {
+        "method": "GET",
+        "url": { "raw": "http://localhost:3000/students/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["students", "1"] }
+      }
+    },
+    {
+      "name": "Update Student",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Jane Doe\",\n  \"email\": \"jane@example.com\",\n  \"age\": 22\n}"
+        },
+        "url": { "raw": "http://localhost:3000/students/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["students", "1"] }
+      }
+    },
+    {
+      "name": "Delete Student",
+      "request": {
+        "method": "DELETE",
+        "url": { "raw": "http://localhost:3000/students/1", "protocol": "http", "host": ["localhost"], "port": "3000", "path": ["students", "1"] }
+      }
+    }
+  ]
+} 
