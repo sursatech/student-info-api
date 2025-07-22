@@ -1,9 +1,14 @@
 import express from 'express';
+import cors from 'cors';
 import studentRoutes from './routes/studentRoutes';
 
 const app = express();
 const PORT = 3000;
 
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true,
+}));
 app.use(express.json());
 app.use('/students', studentRoutes);
 
