@@ -1,6 +1,6 @@
 # Student Info API
 
-A minimal CRUD REST API for managing student information, built with Node.js, TypeScript, Express, Prisma, and PostgreSQL.
+A minimal CRUD REST API for managing student information, built with Bun, TypeScript, Express, Prisma, and PostgreSQL.
 
 ## Features
 - Create, read, update, and delete students
@@ -13,7 +13,7 @@ A minimal CRUD REST API for managing student information, built with Node.js, Ty
 ```sh
 git clone <your-repo-url>
 cd student-info-backend
-npm install
+bun install
 ```
 
 ### 2. Configure Database
@@ -26,7 +26,7 @@ npx prisma migrate dev --name init
 
 ### 4. Start the Server
 ```sh
-npm run dev
+bun run src/index.ts
 ```
 
 Server runs at [http://localhost:3000](http://localhost:3000)
@@ -43,4 +43,4 @@ Server runs at [http://localhost:3000](http://localhost:3000)
 
 ---
 
-**Happy coding!** 
+**Happy coding with Bun!** 
