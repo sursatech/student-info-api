@@ -1,46 +1,56 @@
 # Student Info API
 
-A minimal CRUD REST API for managing student information, built with Bun, TypeScript, Express, Prisma, and PostgreSQL.
+A REST API for managing student information built with Bun, TypeScript, Express, Prisma, and PostgreSQL.
 
-## Features
-- Create, read, update, and delete students
-- Minimal, clean codebase
-- No authentication (for testing/demo purposes)
+## Quick Setup
 
-## Getting Started
+1. **Install dependencies**
+   ```bash
+   bun install
+   ```
 
-### 1. Clone and Install
-```sh
-git clone <your-repo-url>
-cd student-info-backend
-bun install
-```
+2. **Configure database**
+   ```bash
+   # Create .env file
+   DATABASE_URL="postgresql://username:password@localhost:5432/student_info_db"
+   ```
 
-### 2. Configure Database
-- Copy `.env.example` to `.env` and update with your PostgreSQL credentials.
+3. **Setup database**
+   ```bash
+   bunx prisma generate
+   bunx prisma migrate dev --name init
+   ```
 
-### 3. Prisma Migration
-```sh
-npx prisma migrate dev --name init
-```
+4. **Start server**
+   ```bash
+   bun run dev
+   ```
 
-### 4. Start the Server
-```sh
-bun run src/index.ts
-```
-
-Server runs at [http://localhost:3000](http://localhost:3000)
+Server runs at `http://localhost:3000`
 
 ## API Endpoints
-- `POST   /students`      – Create student
-- `GET    /students`      – List all students
-- `GET    /students/:id`  – Get student by ID
-- `PUT    /students/:id`  – Update student by ID
-- `DELETE /students/:id`  – Delete student by ID
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/` | Health check |
+| `POST` | `/students` | Create student |
+| `GET` | `/students` | Get all students |
+| `GET` | `/students/:id` | Get student by ID |
+| `PUT` | `/students/:id` | Update student |
+| `DELETE` | `/students/:id` | Delete student |
+
+## Student Model
+```json
+{
+  "id": 1,
+  "name": "John Doe",
+  "email": "john@example.com", 
+  "age": 20
+}
+```
 
 ## Testing
-- Use the provided `StudentInfoAPI.postman_collection.json` in Postman to test all endpoints.
+Import `StudentInfoAPI.postman_collection.json` into Postman for testing all endpoints.
 
 ---
-
-**Happy coding with Bun!** 
+Built with ❤️ using Bun 
